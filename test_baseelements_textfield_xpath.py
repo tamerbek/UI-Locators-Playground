@@ -10,14 +10,14 @@ def driver():
     yield driver
     driver.quit()
 
-# "[@id='id name']"                 # по id
+# Find by ID "[@id='id name']"
 def test_find_textfield_username_by_id(driver):
     driver.get(url)
     element = driver.find_element(By.XPATH, "//input[@id='user-name-input']")
     driver.execute_script("arguments[0].scrollIntoView(true);", element)
     assert element.is_displayed()
 
-# "//input[@name='username']"       # по атрибуту
+# Find by attribute "//input[@name='username']"
 def test_find_textfield_username_by_name(driver):
     driver.get(url)
     element = driver.find_element(By.XPATH, "//input[@name='username']")
