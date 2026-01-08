@@ -10,21 +10,21 @@ def driver():
     yield driver
     driver.quit()
 
-# "#username"                 # по id
+# Find by id "#username"
 def test_find_textfield_username_by_id(driver):
     driver.get(url)
     element = driver.find_element(By.CSS_SELECTOR, "#user-name-input")
     driver.execute_script("arguments[0].scrollIntoView(true);", element)
     assert element.is_displayed()
 
-#".input-field"              # по классу
+# Find by class ".input-field"
 def test_find_textfield_username_by_class(driver):
     driver.get(url)
     element = driver.find_element(By.CSS_SELECTOR, ".flex.h-10.w-full.border")
     driver.execute_script("arguments[0].scrollIntoView(true);", element)
     assert element.is_displayed()
 
-# "input[name='email']"       # по атрибуту
+# Find by attribute "input[name='email']"
 def test_find_textfield_username_by_datatestid(driver):
     driver.get(url)
     element = driver.find_element(By.CSS_SELECTOR, "input[data-testid='username-field']")
